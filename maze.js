@@ -37,12 +37,10 @@ window.onload = function(){
         });
         //Exercise 6: Disallow cheating
         let playArea = document.getElementById('maze');
-        console.log(maze);
         playArea.onmouseleave = function(){
             triggerAny.forEach(item => {
                 item.classList.add('youlose');
             })};
     });
-
 
 }
