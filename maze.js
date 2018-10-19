@@ -2,20 +2,20 @@
 
 window.onload = function(){
 
-    //highlight first wall if touched
-    let trigger = document.getElementById("boundary1");
+    //Exercise 1: Single boundary turns red
+    /*let trigger = document.getElementById("boundary1");
     trigger.addEventListener("mouseover", function(){
         trigger.classList.add('youlose');
-    });
+    });*/
 
-    //highlight any wall touched
+    //Exercise 2: All boundaries glow red on hover
     let triggerAny = document.querySelectorAll("div#maze > div.boundary");
 
     triggerAny.forEach(item => item.addEventListener("mouseover", function(){
         item.classList.add('youlose');
     }));
 
-    //check if winner
+    //Alerts on successful completion of maze /Exercise 5: On-Page status updates
     let winLose = document.getElementById('status');
     let finish = document.getElementById('end');
     finish.addEventListener("mouseover", function(){
@@ -28,12 +28,21 @@ window.onload = function(){
         tracker === 0 ? winLose.innerHTML = "You Win!" : winLose.innerHTML = "You Lose!";
     });
 
-    //restart game
+    //Exercise 4: Restartable maze
     let startGame = document.getElementById('start');
     startGame.addEventListener("click", function(){
         winLose.innerHTML = "Move your mouse over the \"S\" to begin.";
         triggerAny.forEach(item => {
             item.classList.remove('youlose');
         });
+        //Exercise 6: Disallow cheating
+        let playArea = document.getElementById('maze');
+        console.log(maze);
+        playArea.onmouseleave = function(){
+            triggerAny.forEach(item => {
+                item.classList.add('youlose');
+            })};
     });
+
+
 }
