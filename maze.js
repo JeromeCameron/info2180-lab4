@@ -16,6 +16,7 @@ window.onload = function(){
     }));
 
     //check if winner
+    let winLose = document.getElementById('status');
     let finish = document.getElementById('end');
     finish.addEventListener("mouseover", function(){
         let tracker = 0;
@@ -24,12 +25,13 @@ window.onload = function(){
                  tracker = tracker + 1;
             }
         });
-        tracker === 0 ? alert("You Win!") : alert("You Lose!");
+        tracker === 0 ? winLose.innerHTML = "You Win!" : winLose.innerHTML = "You Lose!";
     });
 
     //restart game
     let startGame = document.getElementById('start');
     startGame.addEventListener("click", function(){
+        winLose.innerHTML = "Move your mouse over the \"S\" to begin.";
         triggerAny.forEach(item => {
             item.classList.remove('youlose');
         });
