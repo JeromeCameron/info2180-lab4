@@ -2,9 +2,15 @@
 
 window.onload = function(){
 
-    let test = document.getElementById("boundary1");
+    let trigger = document.getElementById("boundary1");
 
-    test.addEventListener("mouseover", function(){
-        test.classList.add('youlose');
+    trigger.addEventListener("mouseover", function(){
+        trigger.classList.add('youlose');
     });
+
+    let triggerAny = document.querySelectorAll("div#maze > div.boundary");
+    console.log(triggerAny);
+    triggerAny.forEach(item => item.addEventListener("mouseover", function(){
+        item.classList.add('youlose');
+    }));
 }
