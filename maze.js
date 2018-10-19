@@ -27,4 +27,11 @@ window.onload = function(){
         tracker === 0 ? alert("You Win!") : alert("You Lose!");
     });
 
+    //restart game
+    let startGame = document.getElementById('start');
+    startGame.addEventListener("click", function(){
+        triggerAny.forEach(item => {
+            item.classList.remove('youlose');
+        });
+    });
 }
