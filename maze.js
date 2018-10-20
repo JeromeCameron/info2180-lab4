@@ -24,6 +24,16 @@ window.onload = function(){
                 item.classList.add('youlose');
             }));
 
+            //Exercise 6: Disallow cheating
+            playArea.onmouseleave = function(){
+                if(winLose.innerHTML != "You Win!"){
+                  winLose.innerHTML = "You Lose!"
+                  triggerAny.forEach(item => {
+                    item.classList.add('youlose');
+                  });
+                }
+            };
+
             //Alerts on successful completion of maze /Exercise 5: On-Page status updates
             finish.addEventListener("mouseover", function(){
                 let tracker = 0;
@@ -40,15 +50,6 @@ window.onload = function(){
                 triggerAny.forEach(item => {
                     item.classList.remove('youlose');
                 });
-                //Exercise 6: Disallow cheating
-                playArea.onmouseleave = function(){
-                    if(winLose.innerHTML != "You Win!"){
-                      winLose.innerHTML = "You Lose!"
-                      triggerAny.forEach(item => {
-                        item.classList.add('youlose');
-                      });
-                    }
-                };
 
             });
 
